@@ -22,20 +22,23 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content.startswith('$hello'):
+    if message.content.startswith('!hello'):
         await message.channel.send('¡Hola! Soy un bot')
-    elif message.content.startswith('$smile'):
+    elif message.content.startswith('!smile'):
         await message.channel.send(gen_emodji())
-    elif message.content.startswith('$coin'):
+    elif message.content.startswith('!coin'):
         await message.channel.send(flip_coin())
-    elif message.content.startswith('$cool'):
-        name = message.content[len('$cool'):].strip()
+    elif message.content.startswith('!cool'):
+        name = message.content[len('!cool'):].strip()
         if not name:
             name = message.author.name
         await message.channel.send(check_cool(name))
-    elif message.content.startswith('$pass'):
+    elif message.content.startswith('!pass'):
         await message.channel.send(gen_pass(10))
+    elif message.content.startswith('!dice'):
+        await message.channel.send(roll_dice())
     else:
         await message.channel.send("No puedo procesar este comando, ¡lo siento!")
+    
 
 client.run(settings["TOKEN"])
