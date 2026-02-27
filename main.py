@@ -15,11 +15,12 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content.startswith('$hello'):
+    if message.content.startswith('!hello'):
         await message.channel.send("Hi!")
-    elif message.content.startswith('$bye'):
+    elif message.content.startswith('!bye'):
         await message.channel.send("\U0001f642")
     else:
         await message.channel.send(message.content)
+
 
 client.run("TU TOKEN AQUI TAMBIEN")
