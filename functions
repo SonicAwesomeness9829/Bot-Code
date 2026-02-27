@@ -8,7 +8,7 @@ def gen_pass(pass_length):
     return password
 
 def gen_emodji():
-    emoji = ["😀", "🙂", "😆", "🤣"]
+    emoji = ["😀", "🙂", "😆", "🤣", "😂", "😊", "🥹", "😅", "😇", "🥰", "😍", "🤩", "😘", "😜", "🤪", "😝", "😋"]
     return random.choice(emoji)
 
 def flip_coin():
@@ -20,4 +20,7 @@ def check_cool(name):
         return f"Yes, {name} is cool! 😎"
     else:
         return f"No, {name} is not cool. 😬"
+
+def roll_dice():
+    return str(random.randint(1, 6))
 
